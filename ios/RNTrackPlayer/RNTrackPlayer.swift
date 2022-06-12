@@ -530,6 +530,17 @@ public class RNTrackPlayer: RCTEventEmitter, AudioSessionControllerDelegate {
         resolve(NSNull())
     }
 
+    @objc(setPan:resolver:rejecter:)
+    public func setPan(pan: Float, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
+        if !hasInitialized {
+            reject("player_not_initialized", "The player is not initialized. Call setupPlayer first.", nil)
+            return
+        }
+
+        player.pan(pan)
+        resolve(NSNull())
+    }
+
     @objc(setRepeatMode:resolver:rejecter:)
     public func setRepeatMode(repeatMode: NSNumber, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         if !hasInitialized {

@@ -220,6 +220,15 @@ async function stop(): Promise<void> {
   return TrackPlayer.stop()
 }
 
+
+/***
+ * Controls audio balance 
+ */
+
+async function setPan(pan: number): Promise<void> {
+  return TrackPlayer.setPan(pan);
+}
+
 /**
  * Seeks to a specified time position in the current track.
  */
