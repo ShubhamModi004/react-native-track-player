@@ -344,6 +344,7 @@ export default {
   skip,
   skipToNext,
   skipToPrevious,
+  setPan,
 
   // MARK: - Control Center / Notifications API
   updateOptions,
